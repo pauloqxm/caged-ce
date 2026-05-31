@@ -106,8 +106,9 @@ function renderSectionCharts(sectionId) {
 
   switch (sectionId) {
     case "visao-geral":
-      renderJanAno();
+      renderJanMinAno();
       renderSaldoAnual();
+      renderPandemia2020();
       break;
     case "evolucao":
       renderEstoqueMensal(document.getElementById("filtro-ano").value);
@@ -116,6 +117,7 @@ function renderSectionCharts(sectionId) {
     case "anual":
       renderAdmDesAnual();
       renderCrescAnual();
+      renderSaldo2020();
       break;
     case "municipios":
       renderTopMunicipios();
@@ -149,6 +151,12 @@ function renderInsight() {
   const saldo2024 = DATA.emprego.serie_anual.find((a) => a.ano === 2024);
   const saldo2025 = DATA.emprego.serie_anual.find((a) => a.ano === 2025);
 
+  const p = k.pandemia_2020;
+  const pandemiaTxt = p
+    ? ` Em 2020, a pandemia provocou queda de <strong>${fmt(p.queda_abs)} vínculos</strong>
+       (${fmtPct(p.queda_pct)}) entre janeiro e ${p.mes_min}, com recuperação gradual até dezembro.`
+    : "";
+
   document.getElementById("insight-text").innerHTML = `
     Entre janeiro de 2023 e abril de 2026, o saldo líquido acumulado
     (admissões − desligamentos) foi de
@@ -158,12 +166,27 @@ function renderInsight() {
     (variação de estoque: +${fmt(k.diff_estoque_2023_2026)}).
     Os saldos anuais foram positivos em 2023 (+${fmt(saldo2023?.saldo)}),
     2024 (+${fmt(saldo2024?.saldo)}) e 2025 (+${fmt(saldo2025?.saldo)}),
-    com saldo parcial de jan–abr/2026 de +${fmt(k.saldo_2026_parcial)}.
+    com saldo parcial de jan–abr/2026 de +${fmt(k.saldo_2026_parcial)}.${pandemiaTxt}
     O mercado <strong>não estagnou</strong> — o que estabilizou foi apenas o
     ajuste cadastral entre versões antigas e novas do CAGED.
   `;
 }
 
+function scaleEstoqueY(values) {
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const padding = Math.max((max - min) * 0.1, max * 0.015);
+  return {
+    beginAtZero: false,
+    suggestedMin: Math.floor((min - padding) / 5000) * 5000,
+    suggestedMax: Math.ceil((max + padding) / 5000) * 5000,
+    ticks: {
+      color: COLORS.text,
+      callback: (v) => (v / 1e6).toFixed(2) + " mi",
+    },
+    grid: { color: COLORS.grid },
+  };
+}
 function destroyChart(id) {
   if (charts[id]) {
     charts[id].destroy();
@@ -171,37 +194,111 @@ function destroyChart(id) {
   }
 }
 
-function renderJanAno() {
-  destroyChart("janAno");
-  const d = DATA.emprego.jan_por_ano;
-  const ctx = document.getElementById("chart-jan-ano");
-  charts.janAno = new Chart(ctx, {
+function renderJanMinAno() {
+  destroyChart("janMinAno");
+  const d = DATA.emprego.jan_vs_min || [];
+  const ctx = document.getElementById("chart-jan-min-ano");
+  const valores = d.flatMap((x) => [x.estoque_jan, x.estoque_min]);
+  charts.janMinAno = new Chart(ctx, {
     type: "bar",
     data: {
       labels: d.map((x) => x.ano),
-      datasets: [{
-        label: "Estoque (jan)",
-        data: d.map((x) => x.estoque),
-        backgroundColor: COLORS.blue,
-        borderRadius: 6,
-      }],
+      datasets: [
+        {
+          label: "Estoque (jan)",
+          data: d.map((x) => x.estoque_jan),
+          backgroundColor: COLORS.blue,
+          borderRadius: 4,
+          clip: false,
+        },
+        {
+          label: "Mínimo do ano",
+          data: d.map((x) => x.estoque_min),
+          backgroundColor: d.map((x) => (x.ano === 2020 ? COLORS.red : COLORS.orange)),
+          borderRadius: 4,
+          clip: false,
+        },
+      ],
     },
     options: barOptions({
       plugins: {
+        legend: { display: true },
+        tooltip: {
+          callbacks: {
+            afterBody: (items) => {
+              const i = items[0]?.dataIndex;
+              if (i == null || !d[i]) return "";
+              return `Queda intra-anual: ${fmt(d[i].queda_abs)} (${fmtPct(d[i].queda_pct)}) · mín. em ${d[i].mes_min}`;
+            },
+          },
+        },
+      },
+      scales: { y: scaleEstoqueY(valores) },
+    }),
+  });
+}
+
+function renderPandemia2020() {
+  destroyChart("estoque2020");
+  const d = DATA.emprego.serie_2020 || [];
+  const ctx = document.getElementById("chart-estoque-2020");
+  const valores = d.map((x) => x.estoque);
+  charts.estoque2020 = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: d.map((x) => x.label),
+      datasets: [{
+        label: "Estoque total",
+        data: valores,
+        borderColor: COLORS.red,
+        backgroundColor: "rgba(239, 68, 68, 0.15)",
+        fill: true,
+        tension: 0.25,
+        pointRadius: 4,
+        pointBackgroundColor: d.map((x) => (x.saldo < 0 ? COLORS.red : COLORS.blue)),
+        borderWidth: 2.5,
+      }],
+    },
+    options: {
+      ...chartDefaults,
+      plugins: {
+        ...chartDefaults.plugins,
         legend: { display: false },
         tooltip: {
           callbacks: {
-            label: (c) => fmt(c.raw) + " vínculos",
+            afterLabel: (c) => {
+              const row = d[c.dataIndex];
+              return `Saldo: ${row.saldo >= 0 ? "+" : ""}${fmt(row.saldo)}`;
+            },
           },
         },
       },
       scales: {
-        y: {
-          ticks: {
-            callback: (v) => (v / 1e6).toFixed(2) + " mi",
-          },
-        },
+        ...chartDefaults.scales,
+        y: scaleEstoqueY(valores),
       },
+    },
+  });
+}
+
+function renderSaldo2020() {
+  destroyChart("saldo2020");
+  const d = DATA.emprego.serie_2020 || [];
+  const ctx = document.getElementById("chart-saldo-2020");
+  charts.saldo2020 = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: d.map((x) => x.label),
+      datasets: [{
+        label: "Saldo mensal",
+        data: d.map((x) => x.saldo),
+        backgroundColor: d.map((x) => (x.saldo >= 0 ? COLORS.green : COLORS.red)),
+        borderRadius: 4,
+        clip: false,
+      }],
+    },
+    options: barOptions({
+      plugins: { legend: { display: false } },
     }),
   });
 }
@@ -237,13 +334,14 @@ function renderEstoqueMensal(ano) {
   destroyChart("estoqueMensal");
   const d = filtrarSerie(ano);
   const ctx = document.getElementById("chart-estoque-mensal");
+  const valores = d.map((x) => x.estoque);
   charts.estoqueMensal = new Chart(ctx, {
     type: "line",
     data: {
       labels: d.map((x) => x.label),
       datasets: [{
         label: "Estoque total",
-        data: d.map((x) => x.estoque),
+        data: valores,
         borderColor: COLORS.blue,
         backgroundColor: COLORS.blueLight,
         fill: true,
@@ -257,13 +355,7 @@ function renderEstoqueMensal(ano) {
       plugins: { ...chartDefaults.plugins, legend: { display: false } },
       scales: {
         ...chartDefaults.scales,
-        y: {
-          ...chartDefaults.scales.y,
-          ticks: {
-            ...chartDefaults.scales.y.ticks,
-            callback: (v) => (v / 1e6).toFixed(2) + " mi",
-          },
-        },
+        y: scaleEstoqueY(valores),
       },
     },
   });

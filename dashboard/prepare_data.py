@@ -206,10 +206,45 @@ def processar_abri(registros):
         if s["mes_ano"].startswith("01/"):
             jan_por_ano.append({"ano": int(s["mes_ano"].split("/")[1]), "estoque": s["estoque"]})
 
+    # Janeiro vs mínimo intra-anual (evidencia choque de 2020)
+    por_ano_meses = defaultdict(list)
+    for s in serie_mensal:
+        por_ano_meses[int(s["mes_ano"].split("/")[1])].append(s)
+
+    jan_vs_min = []
+    for ano in sorted(por_ano_meses.keys()):
+        meses = por_ano_meses[ano]
+        jan = next((m for m in meses if m["mes_ano"].startswith("01/")), None)
+        min_m = min(meses, key=lambda x: x["estoque"])
+        if jan:
+            queda = jan["estoque"] - min_m["estoque"]
+            jan_vs_min.append({
+                "ano": ano,
+                "estoque_jan": jan["estoque"],
+                "estoque_min": min_m["estoque"],
+                "mes_min": min_m["label"],
+                "queda_abs": queda,
+                "queda_pct": round((min_m["estoque"] - jan["estoque"]) / jan["estoque"] * 100, 1),
+            })
+
+    serie_2020 = [s for s in serie_mensal if s["mes_ano"].endswith("/2020")]
+
+    pandemia = next((x for x in jan_vs_min if x["ano"] == 2020), None)
+    if pandemia:
+        kpis["pandemia_2020"] = {
+            "estoque_jan": pandemia["estoque_jan"],
+            "estoque_min": pandemia["estoque_min"],
+            "mes_min": pandemia["mes_min"],
+            "queda_abs": pandemia["queda_abs"],
+            "queda_pct": pandemia["queda_pct"],
+        }
+
     return {
         "serie_mensal": serie_mensal,
         "serie_anual": serie_anual,
+        "serie_2020": serie_2020,
         "jan_por_ano": jan_por_ano,
+        "jan_vs_min": jan_vs_min,
         "top_crescimento": crescimento_muni[:15],
         "top_queda": sorted(crescimento_muni, key=lambda x: x["crescimento"])[:10],
         "kpis": kpis,

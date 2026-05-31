@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-05-31T01:11:12",
+  "gerado_em": "2026-05-31T01:32:16",
   "fonte": "dados_caged_abri.csv",
   "emprego": {
     "serie_mensal": [
@@ -732,6 +732,116 @@
         "saldo": 15691
       }
     ],
+    "serie_2020": [
+      {
+        "mes_ano": "01/2020",
+        "label": "Jan/2020",
+        "estoque": 1065975,
+        "admissoes": 36948,
+        "desligamentos": 34488,
+        "saldo": 2460,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "02/2020",
+        "label": "Fev/2020",
+        "estoque": 1072949,
+        "admissoes": 38106,
+        "desligamentos": 31134,
+        "saldo": 6972,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "03/2020",
+        "label": "Mar/2020",
+        "estoque": 1065141,
+        "admissoes": 33549,
+        "desligamentos": 41358,
+        "saldo": -7809,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "04/2020",
+        "label": "Abr/2020",
+        "estoque": 1028942,
+        "admissoes": 13141,
+        "desligamentos": 49340,
+        "saldo": -36199,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "05/2020",
+        "label": "Mai/2020",
+        "estoque": 1016753,
+        "admissoes": 14923,
+        "desligamentos": 27113,
+        "saldo": -12190,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "06/2020",
+        "label": "Jun/2020",
+        "estoque": 1013145,
+        "admissoes": 19547,
+        "desligamentos": 23155,
+        "saldo": -3608,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "07/2020",
+        "label": "Jul/2020",
+        "estoque": 1018130,
+        "admissoes": 28047,
+        "desligamentos": 23053,
+        "saldo": 4994,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "08/2020",
+        "label": "Ago/2020",
+        "estoque": 1028950,
+        "admissoes": 35470,
+        "desligamentos": 24649,
+        "saldo": 10821,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "09/2020",
+        "label": "Set/2020",
+        "estoque": 1040347,
+        "admissoes": 38614,
+        "desligamentos": 27205,
+        "saldo": 11409,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "10/2020",
+        "label": "Out/2020",
+        "estoque": 1055410,
+        "admissoes": 44737,
+        "desligamentos": 29665,
+        "saldo": 15072,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "11/2020",
+        "label": "Nov/2020",
+        "estoque": 1069291,
+        "admissoes": 41420,
+        "desligamentos": 27540,
+        "saldo": 13880,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "12/2020",
+        "label": "Dez/2020",
+        "estoque": 1069884,
+        "admissoes": 31251,
+        "desligamentos": 30654,
+        "saldo": 597,
+        "municipios": 184
+      }
+    ],
     "jan_por_ano": [
       {
         "ano": 2020,
@@ -760,6 +870,64 @@
       {
         "ano": 2026,
         "estoque": 1375487
+      }
+    ],
+    "jan_vs_min": [
+      {
+        "ano": 2020,
+        "estoque_jan": 1065975,
+        "estoque_min": 1013145,
+        "mes_min": "Jun/2020",
+        "queda_abs": 52830,
+        "queda_pct": -5.0
+      },
+      {
+        "ano": 2021,
+        "estoque_jan": 1076133,
+        "estoque_min": 1076133,
+        "mes_min": "Jan/2021",
+        "queda_abs": 0,
+        "queda_pct": 0.0
+      },
+      {
+        "ano": 2022,
+        "estoque_jan": 1150220,
+        "estoque_min": 1150220,
+        "mes_min": "Jan/2022",
+        "queda_abs": 0,
+        "queda_pct": 0.0
+      },
+      {
+        "ano": 2023,
+        "estoque_jan": 1216238,
+        "estoque_min": 1216238,
+        "mes_min": "Jan/2023",
+        "queda_abs": 0,
+        "queda_pct": 0.0
+      },
+      {
+        "ano": 2024,
+        "estoque_jan": 1271831,
+        "estoque_min": 1271831,
+        "mes_min": "Jan/2024",
+        "queda_abs": 0,
+        "queda_pct": 0.0
+      },
+      {
+        "ano": 2025,
+        "estoque_jan": 1325692,
+        "estoque_min": 1325692,
+        "mes_min": "Jan/2025",
+        "queda_abs": 0,
+        "queda_pct": 0.0
+      },
+      {
+        "ano": 2026,
+        "estoque_jan": 1375487,
+        "estoque_min": 1375487,
+        "mes_min": "Jan/2026",
+        "queda_abs": 0,
+        "queda_pct": 0.0
       }
     ],
     "top_crescimento": [
@@ -983,7 +1151,14 @@
       "percentual_2020_2026": 30.7,
       "diff_estoque_2020_2026": 324344,
       "saldo_2025": 48673,
-      "saldo_2026_parcial": 15691
+      "saldo_2026_parcial": 15691,
+      "pandemia_2020": {
+        "estoque_jan": 1065975,
+        "estoque_min": 1013145,
+        "mes_min": "Jun/2020",
+        "queda_abs": 52830,
+        "queda_pct": -5.0
+      }
     }
   },
   "ajuste_cadastral": {

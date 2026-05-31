@@ -79,10 +79,10 @@
       <section class="panel section active" id="visao-geral">
         <div class="grid-2">
           <div class="chart-card">
-            <h2>Estoque de janeiro por ano</h2>
-            <p class="chart-desc">Comparabilidade anual no mesmo mês (jan)</p>
+            <h2>Estoque janeiro vs mínimo do ano</h2>
+            <p class="chart-desc">A distância entre as barras mostra quedas intra-anuais — em 2020, −4,9% (jan → jun)</p>
             <div class="chart-wrap chart-wrap-sm">
-              <canvas id="chart-jan-ano"></canvas>
+              <canvas id="chart-jan-min-ano"></canvas>
             </div>
           </div>
           <div class="chart-card">
@@ -91,6 +91,13 @@
             <div class="chart-wrap chart-wrap-sm">
               <canvas id="chart-saldo-anual"></canvas>
             </div>
+          </div>
+        </div>
+        <div class="chart-card full">
+          <h2>Evolução mensal do estoque em 2020 — impacto da pandemia</h2>
+          <p class="chart-desc">Queda de 52,8 mil vínculos entre janeiro e junho; pior mês: abril (−36,2 mil no saldo)</p>
+          <div class="chart-wrap chart-wrap-md">
+            <canvas id="chart-estoque-2020"></canvas>
           </div>
         </div>
         <div class="insight-box">
@@ -140,6 +147,13 @@
             <div class="chart-wrap chart-wrap-sm">
               <canvas id="chart-cresc-anual"></canvas>
             </div>
+          </div>
+        </div>
+        <div class="chart-card full">
+          <h2>Saldo mensal em 2020</h2>
+          <p class="chart-desc">Admissões − desligamentos mês a mês — março a junho com perda líquida de empregos</p>
+          <div class="chart-wrap chart-wrap-md">
+            <canvas id="chart-saldo-2020"></canvas>
           </div>
         </div>
       </section>
