@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard CAGED — Emprego Formal no Ceará</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+  <div class="app">
+    <header class="mobile-topbar">
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="mobile-topbar-title">
+        <strong>CAGED CE</strong>
+        <small>Emprego Formal</small>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <span class="brand-icon">📊</span>
+        <div>
+          <strong>CAGED CE</strong>
+          <small>Emprego Formal</small>
+        </div>
+      </div>
+      <nav class="nav">
+        <button class="nav-btn active" data-section="visao-geral">Visão Geral</button>
+        <button class="nav-btn" data-section="evolucao">Evolução Mensal</button>
+        <button class="nav-btn" data-section="anual">Balanço Anual</button>
+        <button class="nav-btn" data-section="municipios">Municípios</button>
+        <button class="nav-btn" data-section="ajuste">Ajuste Cadastral</button>
+      </nav>
+      <footer class="sidebar-footer">
+        <p>Fonte: <code>dados_caged_abri.csv</code></p>
+        <p id="data-geracao">—</p>
+      </footer>
+    </aside>
+
+    <main class="main">
+      <header class="header">
+        <div>
+          <h1>Emprego Formal no Ceará</h1>
+          <p class="subtitle">Evolução do estoque de vínculos formais · 2020 a 2026</p>
+        </div>
+        <div class="header-badge">Novo CAGED · MTE</div>
+      </header>
+
+      <!-- KPIs -->
+      <section class="kpis" id="kpis">
+        <div class="kpi-card">
+          <span class="kpi-label">Estoque atual</span>
+          <span class="kpi-value" id="kpi-estoque">—</span>
+          <span class="kpi-meta" id="kpi-mes">—</span>
+        </div>
+        <div class="kpi-card accent-green">
+          <span class="kpi-label">Saldo líquido jan/2023 → abr/2026</span>
+          <span class="kpi-value" id="kpi-cresc-2326">—</span>
+          <span class="kpi-meta" id="kpi-pct-2326">—</span>
+        </div>
+        <div class="kpi-card accent-blue">
+          <span class="kpi-label">Saldo líquido jan/2020 → abr/2026</span>
+          <span class="kpi-value" id="kpi-cresc-2026">—</span>
+          <span class="kpi-meta" id="kpi-pct-2026">—</span>
+        </div>
+        <div class="kpi-card accent-orange">
+          <span class="kpi-label">Saldo líquido 2025</span>
+          <span class="kpi-value" id="kpi-saldo-2025">—</span>
+          <span class="kpi-meta">Admissões − Desligamentos</span>
+        </div>
+      </section>
+
+      <!-- Visão Geral -->
+      <section class="panel section active" id="visao-geral">
+        <div class="grid-2">
+          <div class="chart-card">
+            <h2>Estoque de janeiro por ano</h2>
+            <p class="chart-desc">Comparabilidade anual no mesmo mês (jan)</p>
+            <div class="chart-wrap chart-wrap-sm">
+              <canvas id="chart-jan-ano"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h2>Saldo líquido anual</h2>
+            <p class="chart-desc">Contratações líquidas por ano (positivo = crescimento)</p>
+            <div class="chart-wrap chart-wrap-sm">
+              <canvas id="chart-saldo-anual"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="insight-box">
+          <h3>O que os números mostram</h3>
+          <p id="insight-text">Carregando...</p>
+        </div>
+      </section>
+
+      <!-- Evolução Mensal -->
+      <section class="panel section" id="evolucao">
+        <div class="chart-card full">
+          <div class="chart-header">
+            <div>
+              <h2>Evolução mensal do estoque total</h2>
+              <p class="chart-desc">Soma de todos os municípios cearenses</p>
+            </div>
+            <div class="filter-group">
+              <label>Ano:</label>
+              <select id="filtro-ano">
+                <option value="todos">Todos</option>
+              </select>
+            </div>
+          </div>
+          <div class="chart-wrap chart-wrap-lg">
+            <canvas id="chart-estoque-mensal"></canvas>
+          </div>
+        </div>
+        <div class="chart-card full">
+          <h2>Admissões vs Desligamentos (mensal)</h2>
+          <div class="chart-wrap chart-wrap-lg">
+            <canvas id="chart-fluxo-mensal"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Balanço Anual -->
+      <section class="panel section" id="anual">
+        <div class="grid-2">
+          <div class="chart-card">
+            <h2>Admissões e Desligamentos por ano</h2>
+            <div class="chart-wrap chart-wrap-sm">
+              <canvas id="chart-adm-des-anual"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h2>Taxa de crescimento anual (jan/jan)</h2>
+            <div class="chart-wrap chart-wrap-sm">
+              <canvas id="chart-cresc-anual"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Municípios -->
+      <section class="panel section" id="municipios">
+        <div class="grid-2">
+          <div class="chart-card">
+            <h2>Top 15 — Maior crescimento (jan/2023 → jan/2026)</h2>
+            <div class="chart-wrap chart-wrap-md">
+              <canvas id="chart-top-muni"></canvas>
+            </div>
+          </div>
+          <div class="table-card">
+            <h2>Detalhamento</h2>
+            <div class="table-wrap">
+              <table id="tabela-municipios">
+                <thead>
+                  <tr>
+                    <th>Município</th>
+                    <th>Jan/2023</th>
+                    <th>Jan/2026</th>
+                    <th>Crescimento</th>
+                    <th>%</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ajuste Cadastral -->
+      <section class="panel section" id="ajuste">
+        <div class="info-banner">
+          <strong>Ajuste cadastral (mar vs abri)</strong>
+          <p>
+            O Ministério do Trabalho atualizou o Estoque de Referência com base na RAIS 2025.
+            A diferença entre os arquivos antigo e novo <em>não</em> representa perda de empregos —
+            é um ajuste técnico do nível do estoque, com saldos mensais preservados.
+          </p>
+        </div>
+        <div class="chart-card full" id="ajuste-container">
+          <h2>Diferença de estoque por ano (abri − mar)</h2>
+          <p class="chart-desc">Soma das diferenças em todos os municípios</p>
+          <div class="chart-wrap chart-wrap-md">
+            <canvas id="chart-ajuste"></canvas>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <p>Carregando dados...</p>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

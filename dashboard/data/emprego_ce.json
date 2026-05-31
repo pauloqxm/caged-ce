@@ -1,0 +1,1028 @@
+{
+  "gerado_em": "2026-05-31T01:11:12",
+  "fonte": "dados_caged_abri.csv",
+  "emprego": {
+    "serie_mensal": [
+      {
+        "mes_ano": "01/2020",
+        "label": "Jan/2020",
+        "estoque": 1065975,
+        "admissoes": 36948,
+        "desligamentos": 34488,
+        "saldo": 2460,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "02/2020",
+        "label": "Fev/2020",
+        "estoque": 1072949,
+        "admissoes": 38106,
+        "desligamentos": 31134,
+        "saldo": 6972,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "03/2020",
+        "label": "Mar/2020",
+        "estoque": 1065141,
+        "admissoes": 33549,
+        "desligamentos": 41358,
+        "saldo": -7809,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "04/2020",
+        "label": "Abr/2020",
+        "estoque": 1028942,
+        "admissoes": 13141,
+        "desligamentos": 49340,
+        "saldo": -36199,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "05/2020",
+        "label": "Mai/2020",
+        "estoque": 1016753,
+        "admissoes": 14923,
+        "desligamentos": 27113,
+        "saldo": -12190,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "06/2020",
+        "label": "Jun/2020",
+        "estoque": 1013145,
+        "admissoes": 19547,
+        "desligamentos": 23155,
+        "saldo": -3608,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "07/2020",
+        "label": "Jul/2020",
+        "estoque": 1018130,
+        "admissoes": 28047,
+        "desligamentos": 23053,
+        "saldo": 4994,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "08/2020",
+        "label": "Ago/2020",
+        "estoque": 1028950,
+        "admissoes": 35470,
+        "desligamentos": 24649,
+        "saldo": 10821,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "09/2020",
+        "label": "Set/2020",
+        "estoque": 1040347,
+        "admissoes": 38614,
+        "desligamentos": 27205,
+        "saldo": 11409,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "10/2020",
+        "label": "Out/2020",
+        "estoque": 1055410,
+        "admissoes": 44737,
+        "desligamentos": 29665,
+        "saldo": 15072,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "11/2020",
+        "label": "Nov/2020",
+        "estoque": 1069291,
+        "admissoes": 41420,
+        "desligamentos": 27540,
+        "saldo": 13880,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "12/2020",
+        "label": "Dez/2020",
+        "estoque": 1069884,
+        "admissoes": 31251,
+        "desligamentos": 30654,
+        "saldo": 597,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "01/2021",
+        "label": "Jan/2021",
+        "estoque": 1076133,
+        "admissoes": 42777,
+        "desligamentos": 36531,
+        "saldo": 6246,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "02/2021",
+        "label": "Fev/2021",
+        "estoque": 1086261,
+        "admissoes": 46099,
+        "desligamentos": 35969,
+        "saldo": 10130,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "03/2021",
+        "label": "Mar/2021",
+        "estoque": 1081542,
+        "admissoes": 36772,
+        "desligamentos": 41486,
+        "saldo": -4714,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "04/2021",
+        "label": "Abr/2021",
+        "estoque": 1082767,
+        "admissoes": 32339,
+        "desligamentos": 31122,
+        "saldo": 1217,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "05/2021",
+        "label": "Mai/2021",
+        "estoque": 1085561,
+        "admissoes": 33360,
+        "desligamentos": 30567,
+        "saldo": 2793,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "06/2021",
+        "label": "Jun/2021",
+        "estoque": 1094076,
+        "admissoes": 39664,
+        "desligamentos": 31065,
+        "saldo": 8599,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "07/2021",
+        "label": "Jul/2021",
+        "estoque": 1105961,
+        "admissoes": 44837,
+        "desligamentos": 32880,
+        "saldo": 11957,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "08/2021",
+        "label": "Ago/2021",
+        "estoque": 1121741,
+        "admissoes": 50313,
+        "desligamentos": 34501,
+        "saldo": 15812,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "09/2021",
+        "label": "Set/2021",
+        "estoque": 1135347,
+        "admissoes": 49528,
+        "desligamentos": 35848,
+        "saldo": 13680,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "10/2021",
+        "label": "Out/2021",
+        "estoque": 1142534,
+        "admissoes": 45366,
+        "desligamentos": 38146,
+        "saldo": 7220,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "11/2021",
+        "label": "Nov/2021",
+        "estoque": 1154480,
+        "admissoes": 45235,
+        "desligamentos": 33277,
+        "saldo": 11958,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "12/2021",
+        "label": "Dez/2021",
+        "estoque": 1152355,
+        "admissoes": 34217,
+        "desligamentos": 36345,
+        "saldo": -2128,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "01/2022",
+        "label": "Jan/2022",
+        "estoque": 1150220,
+        "admissoes": 41983,
+        "desligamentos": 44119,
+        "saldo": -2136,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "02/2022",
+        "label": "Fev/2022",
+        "estoque": 1158509,
+        "admissoes": 47406,
+        "desligamentos": 39120,
+        "saldo": 8286,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "03/2022",
+        "label": "Mar/2022",
+        "estoque": 1161097,
+        "admissoes": 45736,
+        "desligamentos": 43149,
+        "saldo": 2587,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "04/2022",
+        "label": "Abr/2022",
+        "estoque": 1166793,
+        "admissoes": 41651,
+        "desligamentos": 35949,
+        "saldo": 5702,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "05/2022",
+        "label": "Mai/2022",
+        "estoque": 1173613,
+        "admissoes": 46190,
+        "desligamentos": 39356,
+        "saldo": 6834,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "06/2022",
+        "label": "Jun/2022",
+        "estoque": 1183886,
+        "admissoes": 47412,
+        "desligamentos": 37140,
+        "saldo": 10272,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "07/2022",
+        "label": "Jul/2022",
+        "estoque": 1194197,
+        "admissoes": 49259,
+        "desligamentos": 38947,
+        "saldo": 10312,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "08/2022",
+        "label": "Ago/2022",
+        "estoque": 1203863,
+        "admissoes": 52328,
+        "desligamentos": 42662,
+        "saldo": 9666,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "09/2022",
+        "label": "Set/2022",
+        "estoque": 1215930,
+        "admissoes": 51143,
+        "desligamentos": 39066,
+        "saldo": 12077,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "10/2022",
+        "label": "Out/2022",
+        "estoque": 1220883,
+        "admissoes": 44828,
+        "desligamentos": 39875,
+        "saldo": 4953,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "11/2022",
+        "label": "Nov/2022",
+        "estoque": 1226871,
+        "admissoes": 44059,
+        "desligamentos": 38071,
+        "saldo": 5988,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "12/2022",
+        "label": "Dez/2022",
+        "estoque": 1218291,
+        "admissoes": 31210,
+        "desligamentos": 39790,
+        "saldo": -8580,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "01/2023",
+        "label": "Jan/2023",
+        "estoque": 1216238,
+        "admissoes": 46488,
+        "desligamentos": 48541,
+        "saldo": -2053,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "02/2023",
+        "label": "Fev/2023",
+        "estoque": 1220876,
+        "admissoes": 44147,
+        "desligamentos": 39509,
+        "saldo": 4638,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "03/2023",
+        "label": "Mar/2023",
+        "estoque": 1225429,
+        "admissoes": 48147,
+        "desligamentos": 43594,
+        "saldo": 4553,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "04/2023",
+        "label": "Abr/2023",
+        "estoque": 1229381,
+        "admissoes": 43610,
+        "desligamentos": 39658,
+        "saldo": 3952,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "05/2023",
+        "label": "Mai/2023",
+        "estoque": 1232541,
+        "admissoes": 46712,
+        "desligamentos": 43552,
+        "saldo": 3160,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "06/2023",
+        "label": "Jun/2023",
+        "estoque": 1238230,
+        "admissoes": 48676,
+        "desligamentos": 42987,
+        "saldo": 5689,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "07/2023",
+        "label": "Jul/2023",
+        "estoque": 1244157,
+        "admissoes": 48184,
+        "desligamentos": 42257,
+        "saldo": 5927,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "08/2023",
+        "label": "Ago/2023",
+        "estoque": 1254842,
+        "admissoes": 54633,
+        "desligamentos": 43948,
+        "saldo": 10685,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "09/2023",
+        "label": "Set/2023",
+        "estoque": 1264865,
+        "admissoes": 50951,
+        "desligamentos": 40928,
+        "saldo": 10023,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "10/2023",
+        "label": "Out/2023",
+        "estoque": 1270847,
+        "admissoes": 48472,
+        "desligamentos": 42490,
+        "saldo": 5982,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "11/2023",
+        "label": "Nov/2023",
+        "estoque": 1274588,
+        "admissoes": 45477,
+        "desligamentos": 41736,
+        "saldo": 3741,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "12/2023",
+        "label": "Dez/2023",
+        "estoque": 1270361,
+        "admissoes": 35189,
+        "desligamentos": 39416,
+        "saldo": -4227,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "01/2024",
+        "label": "Jan/2024",
+        "estoque": 1271831,
+        "admissoes": 49372,
+        "desligamentos": 47902,
+        "saldo": 1470,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "02/2024",
+        "label": "Fev/2024",
+        "estoque": 1275294,
+        "admissoes": 48804,
+        "desligamentos": 45341,
+        "saldo": 3463,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "03/2024",
+        "label": "Mar/2024",
+        "estoque": 1281776,
+        "admissoes": 49620,
+        "desligamentos": 43138,
+        "saldo": 6482,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "04/2024",
+        "label": "Abr/2024",
+        "estoque": 1287420,
+        "admissoes": 50975,
+        "desligamentos": 45331,
+        "saldo": 5644,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "05/2024",
+        "label": "Mai/2024",
+        "estoque": 1294595,
+        "admissoes": 52936,
+        "desligamentos": 45761,
+        "saldo": 7175,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "06/2024",
+        "label": "Jun/2024",
+        "estoque": 1302153,
+        "admissoes": 53369,
+        "desligamentos": 45811,
+        "saldo": 7558,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "07/2024",
+        "label": "Jul/2024",
+        "estoque": 1305511,
+        "admissoes": 55312,
+        "desligamentos": 51954,
+        "saldo": 3358,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "08/2024",
+        "label": "Ago/2024",
+        "estoque": 1315884,
+        "admissoes": 58947,
+        "desligamentos": 48574,
+        "saldo": 10373,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "09/2024",
+        "label": "Set/2024",
+        "estoque": 1325544,
+        "admissoes": 55432,
+        "desligamentos": 45772,
+        "saldo": 9660,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "10/2024",
+        "label": "Out/2024",
+        "estoque": 1328559,
+        "admissoes": 53963,
+        "desligamentos": 50948,
+        "saldo": 3015,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "11/2024",
+        "label": "Nov/2024",
+        "estoque": 1333085,
+        "admissoes": 49872,
+        "desligamentos": 45346,
+        "saldo": 4526,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "12/2024",
+        "label": "Dez/2024",
+        "estoque": 1325955,
+        "admissoes": 36783,
+        "desligamentos": 43913,
+        "saldo": -7130,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "01/2025",
+        "label": "Jan/2025",
+        "estoque": 1325692,
+        "admissoes": 54758,
+        "desligamentos": 55021,
+        "saldo": -263,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "02/2025",
+        "label": "Fev/2025",
+        "estoque": 1332385,
+        "admissoes": 61067,
+        "desligamentos": 54374,
+        "saldo": 6693,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "03/2025",
+        "label": "Mar/2025",
+        "estoque": 1329736,
+        "admissoes": 48462,
+        "desligamentos": 51111,
+        "saldo": -2649,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "04/2025",
+        "label": "Abr/2025",
+        "estoque": 1338639,
+        "admissoes": 57015,
+        "desligamentos": 48112,
+        "saldo": 8903,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "05/2025",
+        "label": "Mai/2025",
+        "estoque": 1344331,
+        "admissoes": 56835,
+        "desligamentos": 51143,
+        "saldo": 5692,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "06/2025",
+        "label": "Jun/2025",
+        "estoque": 1351646,
+        "admissoes": 56721,
+        "desligamentos": 49406,
+        "saldo": 7315,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "07/2025",
+        "label": "Jul/2025",
+        "estoque": 1359254,
+        "admissoes": 61183,
+        "desligamentos": 53575,
+        "saldo": 7608,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "08/2025",
+        "label": "Ago/2025",
+        "estoque": 1366221,
+        "admissoes": 61484,
+        "desligamentos": 54517,
+        "saldo": 6967,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "09/2025",
+        "label": "Set/2025",
+        "estoque": 1376595,
+        "admissoes": 63181,
+        "desligamentos": 52807,
+        "saldo": 10374,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "10/2025",
+        "label": "Out/2025",
+        "estoque": 1380220,
+        "admissoes": 59355,
+        "desligamentos": 55730,
+        "saldo": 3625,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "11/2025",
+        "label": "Nov/2025",
+        "estoque": 1385758,
+        "admissoes": 51491,
+        "desligamentos": 45953,
+        "saldo": 5538,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "12/2025",
+        "label": "Dez/2025",
+        "estoque": 1374628,
+        "admissoes": 36982,
+        "desligamentos": 48112,
+        "saldo": -11130,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "01/2026",
+        "label": "Jan/2026",
+        "estoque": 1375487,
+        "admissoes": 55450,
+        "desligamentos": 54591,
+        "saldo": 859,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "02/2026",
+        "label": "Fev/2026",
+        "estoque": 1380212,
+        "admissoes": 55822,
+        "desligamentos": 51097,
+        "saldo": 4725,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "03/2026",
+        "label": "Mar/2026",
+        "estoque": 1386810,
+        "admissoes": 60746,
+        "desligamentos": 54148,
+        "saldo": 6598,
+        "municipios": 184
+      },
+      {
+        "mes_ano": "04/2026",
+        "label": "Abr/2026",
+        "estoque": 1390319,
+        "admissoes": 56557,
+        "desligamentos": 53048,
+        "saldo": 3509,
+        "municipios": 184
+      }
+    ],
+    "serie_anual": [
+      {
+        "ano": 2020,
+        "admissoes": 375753,
+        "desligamentos": 369354,
+        "saldo": 6399
+      },
+      {
+        "ano": 2021,
+        "admissoes": 500507,
+        "desligamentos": 417737,
+        "saldo": 82770
+      },
+      {
+        "ano": 2022,
+        "admissoes": 543205,
+        "desligamentos": 477244,
+        "saldo": 65961
+      },
+      {
+        "ano": 2023,
+        "admissoes": 560686,
+        "desligamentos": 508616,
+        "saldo": 52070
+      },
+      {
+        "ano": 2024,
+        "admissoes": 615385,
+        "desligamentos": 559791,
+        "saldo": 55594
+      },
+      {
+        "ano": 2025,
+        "admissoes": 668534,
+        "desligamentos": 619861,
+        "saldo": 48673
+      },
+      {
+        "ano": 2026,
+        "admissoes": 228575,
+        "desligamentos": 212884,
+        "saldo": 15691
+      }
+    ],
+    "jan_por_ano": [
+      {
+        "ano": 2020,
+        "estoque": 1065975
+      },
+      {
+        "ano": 2021,
+        "estoque": 1076133
+      },
+      {
+        "ano": 2022,
+        "estoque": 1150220
+      },
+      {
+        "ano": 2023,
+        "estoque": 1216238
+      },
+      {
+        "ano": 2024,
+        "estoque": 1271831
+      },
+      {
+        "ano": 2025,
+        "estoque": 1325692
+      },
+      {
+        "ano": 2026,
+        "estoque": 1375487
+      }
+    ],
+    "top_crescimento": [
+      {
+        "codigo": "230440",
+        "municipio": "Fortaleza",
+        "estoque_2023": 646563,
+        "estoque_2026": 723002,
+        "crescimento": 76439,
+        "percentual": 11.82
+      },
+      {
+        "codigo": "230730",
+        "municipio": "Juazeiro do Norte",
+        "estoque_2023": 45167,
+        "estoque_2026": 55202,
+        "crescimento": 10035,
+        "percentual": 22.22
+      },
+      {
+        "codigo": "230765",
+        "municipio": "Maracanau",
+        "estoque_2023": 56185,
+        "estoque_2026": 63139,
+        "crescimento": 6954,
+        "percentual": 12.38
+      },
+      {
+        "codigo": "230523",
+        "municipio": "Horizonte",
+        "estoque_2023": 18762,
+        "estoque_2026": 24603,
+        "crescimento": 5841,
+        "percentual": 31.13
+      },
+      {
+        "codigo": "231290",
+        "municipio": "Sobral",
+        "estoque_2023": 44034,
+        "estoque_2026": 48697,
+        "crescimento": 4663,
+        "percentual": 10.59
+      },
+      {
+        "codigo": "230370",
+        "municipio": "Caucaia",
+        "estoque_2023": 37968,
+        "estoque_2026": 41378,
+        "crescimento": 3410,
+        "percentual": 8.98
+      },
+      {
+        "codigo": "230428",
+        "municipio": "Eusebio",
+        "estoque_2023": 42685,
+        "estoque_2026": 45671,
+        "crescimento": 2986,
+        "percentual": 7.0
+      },
+      {
+        "codigo": "230100",
+        "municipio": "Aquiraz",
+        "estoque_2023": 17449,
+        "estoque_2026": 20187,
+        "crescimento": 2738,
+        "percentual": 15.69
+      },
+      {
+        "codigo": "230420",
+        "municipio": "Crato",
+        "estoque_2023": 14111,
+        "estoque_2026": 16770,
+        "crescimento": 2659,
+        "percentual": 18.84
+      },
+      {
+        "codigo": "230625",
+        "municipio": "Itaitinga",
+        "estoque_2023": 9039,
+        "estoque_2026": 11663,
+        "crescimento": 2624,
+        "percentual": 29.03
+      },
+      {
+        "codigo": "230750",
+        "municipio": "Lavras da Mangabeira",
+        "estoque_2023": 496,
+        "estoque_2026": 2763,
+        "crescimento": 2267,
+        "percentual": 457.06
+      },
+      {
+        "codigo": "231340",
+        "municipio": "Tiangua",
+        "estoque_2023": 7227,
+        "estoque_2026": 9294,
+        "crescimento": 2067,
+        "percentual": 28.6
+      },
+      {
+        "codigo": "230970",
+        "municipio": "Pacatuba",
+        "estoque_2023": 6354,
+        "estoque_2026": 8267,
+        "crescimento": 1913,
+        "percentual": 30.11
+      },
+      {
+        "codigo": "231140",
+        "municipio": "Quixeramobim",
+        "estoque_2023": 10412,
+        "estoque_2026": 12111,
+        "crescimento": 1699,
+        "percentual": 16.32
+      },
+      {
+        "codigo": "230760",
+        "municipio": "Limoeiro do Norte",
+        "estoque_2023": 7781,
+        "estoque_2026": 9417,
+        "crescimento": 1636,
+        "percentual": 21.03
+      }
+    ],
+    "top_queda": [
+      {
+        "codigo": "231270",
+        "municipio": "Senador Pompeu",
+        "estoque_2023": 2839,
+        "estoque_2026": 2072,
+        "crescimento": -767,
+        "percentual": -27.02
+      },
+      {
+        "codigo": "231070",
+        "municipio": "Pentecoste",
+        "estoque_2023": 2958,
+        "estoque_2026": 2300,
+        "crescimento": -658,
+        "percentual": -22.24
+      },
+      {
+        "codigo": "230010",
+        "municipio": "Abaiara",
+        "estoque_2023": 502,
+        "estoque_2026": 111,
+        "crescimento": -391,
+        "percentual": -77.89
+      },
+      {
+        "codigo": "230640",
+        "municipio": "Itapipoca",
+        "estoque_2023": 11845,
+        "estoque_2026": 11641,
+        "crescimento": -204,
+        "percentual": -1.72
+      },
+      {
+        "codigo": "230250",
+        "municipio": "Brejo Santo",
+        "estoque_2023": 7131,
+        "estoque_2026": 6984,
+        "crescimento": -147,
+        "percentual": -2.06
+      },
+      {
+        "codigo": "230090",
+        "municipio": "Apuiares",
+        "estoque_2023": 426,
+        "estoque_2026": 300,
+        "crescimento": -126,
+        "percentual": -29.58
+      },
+      {
+        "codigo": "230120",
+        "municipio": "Aracoiaba",
+        "estoque_2023": 1047,
+        "estoque_2026": 951,
+        "crescimento": -96,
+        "percentual": -9.17
+      },
+      {
+        "codigo": "230520",
+        "municipio": "Hidrolandia",
+        "estoque_2023": 520,
+        "estoque_2026": 428,
+        "crescimento": -92,
+        "percentual": -17.69
+      },
+      {
+        "codigo": "230710",
+        "municipio": "Jardim",
+        "estoque_2023": 450,
+        "estoque_2026": 361,
+        "crescimento": -89,
+        "percentual": -19.78
+      },
+      {
+        "codigo": "230950",
+        "municipio": "Oros",
+        "estoque_2023": 452,
+        "estoque_2026": 370,
+        "crescimento": -82,
+        "percentual": -18.14
+      }
+    ],
+    "kpis": {
+      "estoque_atual": 1390319,
+      "mes_atual": "Abr/2026",
+      "municipios": 184,
+      "mes_inicio": "01/2023",
+      "mes_fim": "04/2026",
+      "mes_inicio_label": "Jan/2023",
+      "mes_fim_label": "Abr/2026",
+      "estoque_inicio": 1216238,
+      "estoque_fim": 1390319,
+      "crescimento_2023_2026": 172028,
+      "percentual_2023_2026": 14.1,
+      "diff_estoque_2023_2026": 174081,
+      "crescimento_2020_2026": 327158,
+      "percentual_2020_2026": 30.7,
+      "diff_estoque_2020_2026": 324344,
+      "saldo_2025": 48673,
+      "saldo_2026_parcial": 15691
+    }
+  },
+  "ajuste_cadastral": {
+    "por_ano": [
+      {
+        "ano": 2020,
+        "soma_diff": -556520,
+        "media_diff": -258
+      },
+      {
+        "ano": 2021,
+        "soma_diff": -859338,
+        "media_diff": -399
+      },
+      {
+        "ano": 2022,
+        "soma_diff": -937194,
+        "media_diff": -437
+      },
+      {
+        "ano": 2023,
+        "soma_diff": -963801,
+        "media_diff": -449
+      },
+      {
+        "ano": 2024,
+        "soma_diff": -990087,
+        "media_diff": -463
+      },
+      {
+        "ano": 2025,
+        "soma_diff": -982024,
+        "media_diff": -457
+      },
+      {
+        "ano": 2026,
+        "soma_diff": -239786,
+        "media_diff": -442
+      }
+    ]
+  }
+}

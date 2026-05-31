@@ -1,0 +1,13 @@
+.git
+.gitignore
+*.bat
+__pycache__
+*.pyc
+*.pyo
+_calc_emprego.py
+novo_caged.csv
+novo_caged_formatado.csv
+dados_caged.csv
+dados_caged_1.csv
+dados_caged_mar.csv
+Comunicado*.pdf
