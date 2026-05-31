@@ -276,6 +276,7 @@ body.menu-open {
   padding: clamp(1rem, 2.5vw, 1.25rem);
   box-shadow: var(--shadow);
   min-width: 0;
+  overflow: visible;
 }
 
 .chart-card.full {
@@ -329,6 +330,7 @@ body.menu-open {
   position: relative;
   width: 100%;
   min-height: 200px;
+  overflow: visible;
 }
 
 .chart-wrap canvas {

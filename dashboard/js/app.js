@@ -28,6 +28,42 @@ const chartDefaults = {
   },
 };
 
+/** Opções para gráficos de barras — evita corte nas extremidades e sobreposição. */
+function barOptions(overrides = {}) {
+  return {
+    ...chartDefaults,
+    ...overrides,
+    layout: {
+      padding: { top: 12, right: 24, bottom: 8, left: 20 },
+      ...(overrides.layout || {}),
+    },
+    datasets: {
+      bar: { barPercentage: 0.82, categoryPercentage: 0.72 },
+      ...(overrides.datasets || {}),
+    },
+    interaction: { mode: "index", intersect: false },
+    plugins: {
+      ...chartDefaults.plugins,
+      tooltip: { mode: "index", intersect: false },
+      ...(overrides.plugins || {}),
+    },
+    scales: {
+      x: {
+        ...chartDefaults.scales.x,
+        offset: true,
+        stacked: false,
+        grid: { color: COLORS.grid, offset: true },
+        ...(overrides.scales?.x || {}),
+      },
+      y: {
+        ...chartDefaults.scales.y,
+        stacked: false,
+        ...(overrides.scales?.y || {}),
+      },
+    },
+  };
+}
+
 let DATA = null;
 let charts = {};
 const renderedSections = new Set();
@@ -61,7 +97,9 @@ function renderSectionCharts(sectionId) {
   if (!DATA) return;
 
   if (renderedSections.has(sectionId)) {
-    requestAnimationFrame(resizeAllCharts);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(resizeAllCharts);
+    });
     return;
   }
   renderedSections.add(sectionId);
@@ -88,7 +126,9 @@ function renderSectionCharts(sectionId) {
       break;
   }
 
-  requestAnimationFrame(resizeAllCharts);
+  requestAnimationFrame(() => {
+    requestAnimationFrame(resizeAllCharts);
+  });
 }
 
 function renderKPIs() {
@@ -146,10 +186,8 @@ function renderJanAno() {
         borderRadius: 6,
       }],
     },
-    options: {
-      ...chartDefaults,
+    options: barOptions({
       plugins: {
-        ...chartDefaults.plugins,
         legend: { display: false },
         tooltip: {
           callbacks: {
@@ -158,16 +196,13 @@ function renderJanAno() {
         },
       },
       scales: {
-        ...chartDefaults.scales,
         y: {
-          ...chartDefaults.scales.y,
           ticks: {
-            ...chartDefaults.scales.y.ticks,
             callback: (v) => (v / 1e6).toFixed(2) + " mi",
           },
         },
       },
-    },
+    }),
   });
 }
 
@@ -186,10 +221,9 @@ function renderSaldoAnual() {
         borderRadius: 6,
       }],
     },
-    options: {
-      ...chartDefaults,
-      plugins: { ...chartDefaults.plugins, legend: { display: false } },
-    },
+    options: barOptions({
+      plugins: { legend: { display: false } },
+    }),
   });
 }
 
@@ -279,20 +313,25 @@ function renderAdmDesAnual() {
           label: "Admissões",
           data: d.map((x) => x.admissoes),
           backgroundColor: COLORS.green,
+          borderColor: "rgba(34, 197, 94, 1)",
+          borderWidth: 1,
           borderRadius: 4,
+          clip: false,
         },
         {
           label: "Desligamentos",
           data: d.map((x) => x.desligamentos),
           backgroundColor: COLORS.red,
+          borderColor: "rgba(239, 68, 68, 1)",
+          borderWidth: 1,
           borderRadius: 4,
+          clip: false,
         },
       ],
     },
-    options: {
-      ...chartDefaults,
-      scales: { ...chartDefaults.scales, x: { ...chartDefaults.scales.x, stacked: false } },
-    },
+    options: barOptions({
+      plugins: { legend: { display: true } },
+    }),
   });
 }
 
@@ -317,17 +356,14 @@ function renderCrescAnual() {
         borderRadius: 6,
       }],
     },
-    options: {
-      ...chartDefaults,
-      plugins: { ...chartDefaults.plugins, legend: { display: false } },
+    options: barOptions({
+      plugins: { legend: { display: false } },
       scales: {
-        ...chartDefaults.scales,
         y: {
-          ...chartDefaults.scales.y,
-          ticks: { ...chartDefaults.scales.y.ticks, callback: (v) => v + "%" },
+          ticks: { callback: (v) => v + "%" },
         },
       },
-    },
+    }),
   });
 }
 
