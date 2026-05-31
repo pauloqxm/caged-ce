@@ -150,10 +150,18 @@
           </div>
         </div>
         <div class="chart-card full">
-          <h2>Saldo mensal em 2020</h2>
-          <p class="chart-desc">Admissões − desligamentos mês a mês — março a junho com perda líquida de empregos</p>
+          <div class="chart-header">
+            <div>
+              <h2 id="saldo-mensal-titulo">Saldo mensal</h2>
+              <p class="chart-desc" id="saldo-mensal-desc">Admissões − desligamentos mês a mês</p>
+            </div>
+            <div class="filter-group">
+              <label>Ano:</label>
+              <select id="filtro-saldo-ano"></select>
+            </div>
+          </div>
           <div class="chart-wrap chart-wrap-md">
-            <canvas id="chart-saldo-2020"></canvas>
+            <canvas id="chart-saldo-mensal"></canvas>
           </div>
         </div>
       </section>

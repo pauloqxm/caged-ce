@@ -75,6 +75,7 @@ async function init() {
     renderKPIs();
     renderInsight();
     setupFiltroAno();
+    setupFiltroSaldoAno();
     setupNav();
     setupMobileMenu();
     setupChartResize();
@@ -117,7 +118,7 @@ function renderSectionCharts(sectionId) {
     case "anual":
       renderAdmDesAnual();
       renderCrescAnual();
-      renderSaldo2020();
+      renderSaldoMensal(document.getElementById("filtro-saldo-ano").value);
       break;
     case "municipios":
       renderTopMunicipios();
@@ -281,11 +282,32 @@ function renderPandemia2020() {
   });
 }
 
-function renderSaldo2020() {
-  destroyChart("saldo2020");
-  const d = DATA.emprego.serie_2020 || [];
-  const ctx = document.getElementById("chart-saldo-2020");
-  charts.saldo2020 = new Chart(ctx, {
+function descricaoSaldoMensal(ano, dados) {
+  if (String(ano) === "2020") {
+    return "Admissões − desligamentos mês a mês — março a junho com perda líquida de empregos (pandemia)";
+  }
+  const total = dados.reduce((s, x) => s + x.saldo, 0);
+  const negativos = dados.filter((x) => x.saldo < 0);
+  if (!negativos.length) {
+    return `Todos os meses positivos · acumulado ${total >= 0 ? "+" : ""}${fmt(total)}`;
+  }
+  const pior = negativos.reduce((a, b) => (a.saldo < b.saldo ? a : b));
+  return `${negativos.length} mês(es) negativo(s) · pior: ${pior.label} (${fmt(pior.saldo)}) · acumulado ${total >= 0 ? "+" : ""}${fmt(total)}`;
+}
+
+function atualizarTituloSaldoMensal(ano, dados) {
+  const titulo = document.getElementById("saldo-mensal-titulo");
+  const desc = document.getElementById("saldo-mensal-desc");
+  if (titulo) titulo.textContent = `Saldo mensal em ${ano}`;
+  if (desc) desc.textContent = descricaoSaldoMensal(ano, dados);
+}
+
+function renderSaldoMensal(ano) {
+  destroyChart("saldoMensal");
+  const d = filtrarSerie(String(ano));
+  atualizarTituloSaldoMensal(ano, d);
+  const ctx = document.getElementById("chart-saldo-mensal");
+  charts.saldoMensal = new Chart(ctx, {
     type: "bar",
     data: {
       labels: d.map((x) => x.label),
@@ -592,6 +614,24 @@ function setupChartResize() {
     const ro = new ResizeObserver(onResize);
     document.querySelectorAll(".chart-wrap").forEach((el) => ro.observe(el));
   }
+}
+
+function setupFiltroSaldoAno() {
+  const sel = document.getElementById("filtro-saldo-ano");
+  if (!sel) return;
+
+  const anos = [...new Set(DATA.emprego.serie_mensal.map((s) => s.mes_ano.split("/")[1]))];
+  anos.forEach((a) => {
+    const opt = document.createElement("option");
+    opt.value = a;
+    opt.textContent = a;
+    if (a === "2020") opt.selected = true;
+    sel.appendChild(opt);
+  });
+
+  sel.addEventListener("change", () => {
+    renderSaldoMensal(sel.value);
+  });
 }
 
 function setupFiltroAno() {
